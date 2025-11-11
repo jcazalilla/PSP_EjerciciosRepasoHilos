@@ -11,10 +11,11 @@ package ejercicio04;
 public class UsarHilos extends Thread {
 
     int operacion;
-    ClaseArray ca = new ClaseArray();
+    ClaseArray ca;
 
-    public UsarHilos(int operacion) {
+    public UsarHilos(ClaseArray ca, int operacion) {
         this.operacion = operacion;
+        this.ca = ca;
     }
 
     @Override

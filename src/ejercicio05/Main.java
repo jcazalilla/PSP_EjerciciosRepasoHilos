@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicio02;
+package ejercicio05;
 
 /**
  *
- * @author jesusCazalilla
+ * @author Jesús Cazalilla
  */
 public class Main {
 
@@ -15,12 +15,11 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        //hilos mediante interfaz Runnable
-        Thread gato = new Thread(new Gato());
-        Thread perro = new Thread(new Perro());
+        Almacen almacen = new Almacen();
 
-        gato.start();
-        perro.start();
+        new Pintor(almacen, "Pintor").start();
+
+        new Vendedor(almacen, "Vendedor").start();
 
     }
 

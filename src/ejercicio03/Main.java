@@ -5,6 +5,8 @@
 package ejercicio03;
 
 import ejercicio02.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,17 +19,21 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Perro[] perros = new Perro[5];
-        Gato[] gatos = new Gato[5];
+        List<Thread> perros = new ArrayList<>();
+        List<Thread> gatos = new ArrayList<>();
 
-        for (int i =0; i < 5; i++) {
-            perros[i] = new Perro("Perro " +(i+1));
-            gatos[i] = new Gato("Gato " + (i+1));
+        for (int i = 0; i < 5; i++) {
+
+            Thread gato = new Thread(new Gato(), "Gato " + (i + 1));
+            Thread perro = new Thread(new Perro(), "Perro " + (i + 1));
+
+            gatos.add(gato);
+            perros.add(perro);
         }
 
         for (int i = 0; i < 5; i++) {
-            perros[i].start();
-            gatos[i].start();
+            gatos.get(i).start();
+            perros.get(i).start();
         }
 
     }

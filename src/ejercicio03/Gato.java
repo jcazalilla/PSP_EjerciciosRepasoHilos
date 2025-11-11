@@ -12,15 +12,12 @@ import ejercicio02.*;
  */
 public class Gato extends Thread {
 
-    public Gato(String name) {
-        super(name);
-    }
     
 
     @Override
     public void run() {
 
-        System.out.println(this.getName()+": Miau!");
+        System.out.println(Thread.currentThread().getName()+": Miau!");
 
     }
 

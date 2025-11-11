@@ -15,9 +15,9 @@ public class Main {
         ClaseArray ca = new ClaseArray();
 
         //1=sumar ; 2=restar; 3=multiplicar
-        UsarHilos uh1 = new UsarHilos(1);
-        UsarHilos uh2 = new UsarHilos(2);
-        UsarHilos uh3 = new UsarHilos(3);
+        UsarHilos uh1 = new UsarHilos(ca,1);
+        UsarHilos uh2 = new UsarHilos(ca,2);
+        UsarHilos uh3 = new UsarHilos(ca,3);
 
         uh1.start();
         uh2.start();

@@ -12,15 +12,13 @@ import ejercicio02.*;
  */
 public class Perro extends Thread {
 
-    public Perro(String name) {
-        super(name);
-    }
+   
     
 
     @Override
     public void run() {
 
-        System.out.println(this.getName()+": Guau!");
+        System.out.println(Thread.currentThread().getName()+": Guau!");
 
     }
 
